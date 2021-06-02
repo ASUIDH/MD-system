@@ -1,8 +1,9 @@
 # Malware-Detection
 web端的Windows恶意软件检测系统
+
 框架：vue2.0+flask+mysql
 
-python manage.py runserver
+
 
 ## Overview
 The repository is organised as follows:
