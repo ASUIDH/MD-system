@@ -12,11 +12,13 @@
         >
           <el-menu-item index="/1">软件检测</el-menu-item>
           <el-menu-item index="/2">检测搜索</el-menu-item>
+          <el-menu-item index="/3">相似性度量</el-menu-item>
+          <el-menu-item index="/result_sim">测试</el-menu-item>
         </el-menu>
 
         <div v-if="!isLogin" class="sign">
           <el-button
-            style="marginright: 20px"
+            style="margin-right: 20px"
             round
             size="small"
             type="primary"
@@ -26,7 +28,7 @@
         </div>
 
         <div v-else>
-          <el-dropdown @command="handleCommand" style="marginright: 20px">
+          <el-dropdown @command="handleCommand" style="margin-right: 20px">
             <el-button type="success">
               {{ name }}<i class="el-icon-arrow-down el-icon--right"></i>
             </el-button>
