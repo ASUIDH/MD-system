@@ -3,15 +3,42 @@
     <div class="resHeader">
       <img @click="goBack" src="../assets/imgs/back.png" alt="" /><span
         @click="goBack"
-        class="back"
+        class="back"    
         >返回</span
       ><span class="title">检测结果</span>
+     
     </div>
+     <!-- <div v-if="result">
+          {{result}}
+    </div> -->
+    
+    <div v-if="sim_res">
+      <table>
+        <thead>
+          <th>FileType</th>
+          <th>MachineType</th>
+          <th>filesize</th>
+          <th>md5</th>
+          <th>time</th>
+        </thead>
+        <tbody>
+          <tr v-for="res in sim_res" :key='res'>
+            <td>{{res.FileType}}</td>
+            <td>{{res.MachineType}}</td>
+            <td>{{res.filesize}}</td>
+            <td>{{res.md5}}</td>
+            <td>{{res.time}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div vif="graph" ref="avgtime" :style="{ width: '100%', height: '1000px' }"></div>
+    <div vif="graph" ref="avgtime1" :style="{ width: '500px', height: '500px' }"></div>
     <!-- <el-page-header @back="goBack" content="检测结果页面"> </el-page-header> -->
-    <div v-if="result" class="results">
+    <!-- <div v-if="result" class="results">
       <div class="words">
         <img :src="require(`../assets/imgs/${result.status}.png`)" alt="" />
-
+       
         <div class="necessary">
           <div>md5:{{ result.md5 }}</div>
           <div>文件名称:{{ result.filename }}</div>
@@ -31,27 +58,7 @@
         </div>
       </div>
 
-      <div class="tabs">
-        <el-tabs
-          v-model="activeName"
-          type="border-card"
-          @tab-click="handleClick"
-        >
-          <el-tab-pane label="DOS头" name="DOS头"
-            ><Coff :coff="coff"
-          /></el-tab-pane>
-          <el-tab-pane label="OPTIONAL头" name="OPTIONAL头"
-            ><Optional :optional="optional"
-          /></el-tab-pane>
-          <el-tab-pane label="imports" name="imports"
-            ><Imports :imports="imports"
-          /></el-tab-pane>
-          <el-tab-pane label="sections" name="sections"
-            ><Sections :sections="sections"
-          /></el-tab-pane>
-        </el-tabs>
-      </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -62,25 +69,43 @@ import Optional from "./details/Optional";
 import Imports from "./details/Imports";
 
 export default {
-  async created() {
-    document.title = "结果";
-    const { idORmd5, key } = this.$route.params;
-    const { data } = await this.$http.get(`/sim_search_result${idORmd5}/${key}`);
-    this.result = data;
-    this.coff = data.coff || {};
-    this.optional = data.optional || {};
-    this.imports = data.imports || [];
-    this.sections = data.sections || [];
-  },
+  //  async drawLine() {
+  //   document.title = "结果";
+  //   const { key } = this.$route.params;
+  //   const { data } =  await this.$http.get(`/searchfilemd5/sim/${key}`);
+  //   this.result = data;
+  //   this.coff = data.coff || {};
+  //   this.optional = data.optional || {};
+  //   this.imports = data.imports || [];
+  //   this.sections = data.sections || [];
+  //   this.sim_res = data.sim_res || [];
+  // },
   data() {
     return {
-      result: null,
+      result: {},
       activeName: "DOS头",
       coff: {},
       optional: {},
       imports: [],
       sections: [],
+      sim_res:[],
+      graph:{},
     };
+  },
+  async created(){
+    document.title = "结果";
+    const { key } = this.$route.params;
+    const { data } =  await this.$http.get(`/searchfilemd5/sim/${key}`);
+    this.result = data;
+    this.graph = data.graph || {};
+    this.coff = data.coff || {};
+    this.optional = data.optional || {};
+    this.imports = data.imports || [];
+    this.sections = data.sections || [];
+    this.sim_res = data.sim_res || [];
+    // this.drawLine([1,2,3,4,5,6,7]);
+    this.drawGraph(this.graph);
+
   },
   methods: {
     goBack() {
@@ -89,6 +114,67 @@ export default {
     handleClick(tab, event) {
       console.log(tab, event);
     },
+    async drawLine(test){
+    
+    let mychart = this.$echarts.init(this.$refs.avgtime1);
+    let option = {
+      xAxis: {
+        type: 'category',
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+      },
+      yAxis: {
+        type: 'value'
+      },
+      series: [
+        {
+          data: test,
+          type: 'line'
+        }
+      ]
+      };
+    mychart.setOption(option);
+    },
+    async drawGraph(graph){
+        let myChart = this.$echarts.init(this.$refs.avgtime);
+        let option = {
+          tooltip: {},
+          legend: [
+            {
+              data: graph.categories.map(function (a) {
+                return a.name;
+              })
+            }
+          ],
+          series: [
+            {
+              name: 'Les Miserables',
+              type: 'graph',
+              layout: 'none',
+              data: graph.nodes,
+              links: graph.links,
+              categories: graph.categories,
+              roam: true,
+              label: {
+                show: true,
+                position: 'right',
+                formatter: '{b}'
+              },
+              labelLayout: {
+                hideOverlap: true
+              },
+              scaleLimit: {
+                min: 0.4,
+                max: 2
+              },
+              lineStyle: {
+                color: 'source',
+                curveness: 0.3
+              }
+            }
+          ]
+        };
+        myChart.setOption(option);
+          },
   },
   components: {
     Coff,
@@ -96,7 +182,19 @@ export default {
     Optional,
     Imports,
   },
+  mounted(){
+
+    //this.drawGraph(this.graph)
+    // this.$nextTick(()=>{
+    //   this.drawLine()
+    // })
+  },
 };
+
+
+
+
+
 </script>
 
 <style scoped>

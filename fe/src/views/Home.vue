@@ -1,4 +1,5 @@
 <template>
+
   <div class="home">
     <el-container>
       <el-header>
@@ -343,6 +344,7 @@ export default {
   },
 };
 </script>
+
 
 <style scoped>
 .el-footer,

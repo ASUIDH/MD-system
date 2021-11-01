@@ -64,8 +64,8 @@ import Imports from "./details/Imports";
 export default {
   async created() {
     document.title = "结果";
-    const { idORmd5, key } = this.$route.params;
-    const { data } = await this.$http.get(`/searchfile${idORmd5}/${key}`);
+    const {key} = this.$route.params;
+    const { data } = await this.$http.get(`/searchfilemd5/search/${key}`);
     this.result = data;
     this.coff = data.coff || {};
     this.optional = data.optional || {};
