@@ -10,133 +10,8 @@
       <div><Roll :infos="fileList3" class="roll3" :size="size"></Roll></div>
     </div>
 
-    <div class="options">
-      <div class="btn" :style="{ marginRight: '10px' }">
-        <el-button type="primary" icon="el-icon-search" @click="focus"
-          >搜索</el-button
-        >
-      </div>
-      <div class="drawer">
-        <el-drawer
-          :append-to-body="true"
-          size="30%"
-          :modal="false"
-          :visible.sync="drawer"
-          :with-header="false"
-        >
-          <div class="sort">
-            <div class="status">
-              <div class="statusText">软件种类:</div>
-              <div class="statusSelect">
-                <el-radio-group v-model="searchForm.status" fill="#4ec9b0">
-                  <el-radio label="">全部种类</el-radio>
-                  <el-radio label="safe">非恶意</el-radio>
-                  <el-radio label="unsafe">恶意</el-radio>
-                </el-radio-group>
-              </div>
-            </div>
-            <div class="time">
-              <div class="timeText">时间:</div>
-              <div class="timeSelect">
-                <el-radio-group v-model="searchForm.time">
-                  <el-radio label="timeDesc">最新</el-radio>
-                  <el-radio label="timeAsc">最旧</el-radio>
-                </el-radio-group>
-              </div>
-            </div>
+   
 
-            <div class="count">
-              <div class="countText">搜索数量:</div>
-              <div class="countSelect">
-                <el-radio-group v-model="searchForm.count">
-                  <el-radio label="countDesc">降序</el-radio>
-                  <el-radio label="countAsc">升序</el-radio>
-                </el-radio-group>
-              </div>
-            </div>
-          </div>
-
-          <div class="dateSelector">
-            <div class="input">
-              <span class="timetxt">选择起始日期:</span>
-              <div class="calendar">
-                <el-date-picker
-                  value-format="timestamp"
-                  v-model="searchForm.date1"
-                  type="date"
-                  :clearable="false"
-                  placeholder="选择起始日期"
-                >
-                </el-date-picker>
-              </div>
-            </div>
-            <div class="input" :style="{ marginBottom: '60px' }">
-              <span class="timetxt">选择结束日期:</span>
-
-              <div class="calendar">
-                <el-date-picker
-                  value-format="timestamp"
-                  v-model="searchForm.date2"
-                  type="date"
-                  :clearable="false"
-                  placeholder="选择结束日期"
-                >
-                </el-date-picker>
-              </div>
-            </div>
-          </div>
-
-          <div class="input">
-            <div class="input_txt">文件名:</div>
-            <div>
-              <el-input
-                placeholder="请输入文件名"
-                prefix-icon="el-icon-search"
-                v-model="searchForm.filename"
-              >
-              </el-input>
-            </div>
-          </div>
-          <div class="input">
-            <div class="input_txt">md5:</div>
-            <div>
-              <el-input
-                placeholder="请输入md5"
-                prefix-icon="el-icon-search"
-                v-model="searchForm.md5"
-              >
-              </el-input>
-            </div>
-          </div>
-
-          <div class="input">
-            <div class="input_txt">邮箱:</div>
-            <div>
-              <el-input
-                placeholder="请输入邮箱"
-                prefix-icon="el-icon-search"
-                v-model="searchForm.user"
-              >
-              </el-input>
-            </div>
-          </div>
-
-          <div class="drawerbtn">
-            <el-button type="primary" @click="search">搜索</el-button>
-          </div>
-        </el-drawer>
-      </div>
-    </div>
-    <div class="pagination" v-if="!showRolls">
-      <el-pagination
-        @current-change="handleCurrentChange"
-        :current-page.sync="searchForm.page"
-        :page-size="16"
-        layout="total, prev, pager, next"
-        :total="total"
-      >
-      </el-pagination>
-    </div>
     <div class="results" v-if="!showRolls && fileList.length > 0">
       <Card
         class="card"
@@ -145,7 +20,18 @@
         :info="item"
       ></Card>
     </div>
+    
     <div v-else class="notfound">没有符合条件的文件！！！！！</div>
+    <div class="pagination" v-if="!showRolls">
+      <el-pagination
+        @current-change="handleCurrentChange"
+        :current-page.sync="searchForm.page"
+        :page-size="10"
+        layout="total, prev, pager, next"
+        :total="total"
+      >
+      </el-pagination>
+    </div>
   </div>
 </template>
 
@@ -317,7 +203,7 @@ export default {
 .pagination {
   position: absolute;
   left: 50%;
-  bottom: 140px;
+  /* bottom: 140px; */
   transform: translateX(-50%);
 }
 .results {
@@ -325,7 +211,7 @@ export default {
   justify-content: flex-start;
   flex-wrap: wrap;
   align-items: center;
-  margin-left: 80px;
+  margin-left: 150px;
   margin-top: 10px;
 }
 .drawer {

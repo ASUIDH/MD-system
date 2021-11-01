@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class ="head_1"> 恶意软件安全检测</div>
     <div class="resHeader">
       <img @click="goBack" src="../assets/imgs/back.png" alt="" /><span
         @click="goBack"
@@ -107,6 +108,7 @@ export default {
   align-items: center;
   box-shadow: rgb(17 17 17 / 16%) 0px 4px 8px -3px;
   margin-bottom: 15px;
+    background-color: rgb(53,167,89);
 }
 .words {
   display: flex;
@@ -127,6 +129,7 @@ export default {
 .resHeader .back {
   /* margin: 20px 0; */
   /* padding: 5px; */
+  color:rgb(255,255,255);
   position: relative;
 }
 .resHeader .back::after {
@@ -145,6 +148,7 @@ export default {
   font-size: 24px;
   left: 50%;
   transform: translateX(-50%);
+  color:rgb(255,255,255);
 }
 
 .results {
@@ -152,5 +156,12 @@ export default {
   margin: 0 auto;
   /* height: calc(100vh - 50px); */
   /* background-color: rgb(237, 240, 244); */
+}
+.head_1{
+  background:rgb(40,40,40);
+  color:rgb(255,255,255);
+  height:35px;
+  font-size:20px;
+  padding:0px 0px 0px 100px;
 }
 </style>
