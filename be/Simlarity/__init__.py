@@ -92,12 +92,13 @@ def testWithMd5(md5):
     for id in id_name:
         if( id_type[id] == "pefile"):
             candidates.append(id)
-        if len(candidates) > 10 :
-            continue
+        if len(candidates) > 50 :
+            break
     topIds = test(query,candidates)
     topsMd5 = [id_name[id] for id in topIds]
     return topsMd5
 
 
 if __name__ == "__main__":
-    print(testWithMd5("0f65ec92b0929f58442cf942d0138e05"))
+    for i in range(0,100):
+        print(len(testWithMd5("0f65ec92b0929f58442cf942d0138e05")))
