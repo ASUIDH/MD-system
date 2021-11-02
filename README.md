@@ -28,7 +28,7 @@ python manage.py db migrate -m "init"
 
 python manage.py db upgrade
 ```
-## Contribuitors
+## Contributors
 * @ASUIDH
 * @xuxixaohaoer
 ## video demonstration
