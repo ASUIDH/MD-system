@@ -33,12 +33,14 @@ const routes = [
   },
 
   {
-    path: "/result/:key/:idORmd5",
+    path: "/result_search/:key/md5",
+    // path: "/result/search/:key/md5",
     name: "Result",
     component: () => import("../views/Result.vue"),
   },
   {
-    path: "/result_sim/:key/:id0Rmd5",
+    // path: "/result_sim/:key/:id0Rmd5",
+    path:"/result_sim/:key/md5",
     name: "ReasultSim",
     component:() => import("../views/ResultSim.vue"),
   },

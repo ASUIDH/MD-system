@@ -150,6 +150,7 @@ export default {
   opacity: 0.9;
   border-radius: 6px;
   font-size: 18px;
+  box-shadow: 10px 5px 5px #888888;
 }
 .handle-center {
   width: 100vw;
@@ -171,6 +172,7 @@ div.el-upload-dragger {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-shadow: 5px 10px 5px #888888;
 }
 .el-progress {
   position: absolute !important;
@@ -180,6 +182,8 @@ div.el-upload-dragger {
 }
 .el-upload__text {
   font-size: 20px !important;
+
+  
 }
 .tip {
   font-size: 14px !important;
