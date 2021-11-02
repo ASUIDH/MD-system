@@ -13,9 +13,9 @@
           router
         >
 
-          <el-menu-item index="/1"><img src="../assets/imgs/icon-test.png" alt="" style="width:25px"/>&nbsp软件检测</el-menu-item>
-          <el-menu-item index="/2"><img src="../assets/imgs/sousuo.png" alt="" style="width:20px"/>&nbsp检测搜索</el-menu-item>
-          <el-menu-item index="/3"><img src="../assets/imgs/wenbenxiangsixing-4.png" alt="" style="width:20px"/>&nbsp相似性度量</el-menu-item>
+          <el-menu-item index="/1"><img src="../assets/imgs/icon-test.png" alt="" style="width:25px"/>&nbsp;软件检测</el-menu-item>
+          <el-menu-item index="/2"><img src="../assets/imgs/sousuo.png" alt="" style="width:20px"/>&nbsp;检测搜索</el-menu-item>
+          <el-menu-item index="/3"><img src="../assets/imgs/wenbenxiangsixing-4.png" alt="" style="width:20px"/>&nbsp;相似性度量</el-menu-item>
           
         </el-menu>
 
@@ -349,6 +349,7 @@ export default {
 
 
 <style scoped>
+
 .el-footer,
 .el-header {
   display: flex;
@@ -361,6 +362,7 @@ export default {
   height: 60px;
   box-shadow: 10px 10px 5px #888888;
   background:  rgb(53,167,89);
+
 }
 
 .el-main {
@@ -370,7 +372,11 @@ export default {
   position: relative;
   padding: 0;
   background-color: rgb(236, 240, 244);
+  background-image:url( "../assets/imgs/beijing1.png");
+  background-repeat:no-repeat;
+  background-position: 128% 0%;
   box-shadow: 10px 10px 5px #888888;
+
 }
 .el-icon-arrow-down {
   font-size: 12px;
@@ -406,7 +412,7 @@ export default {
   right: 20px;
 } */
 .el-menu-item{
-  height:60px;
+
   font-size:16px;
   background:  rgb(53,167,89);
   color: rgb(255,255,255);
@@ -414,7 +420,7 @@ export default {
 }
 .el-menu-item:hover{
     outline: 0 !important;
-    height: 65px;
+
     background: rgb(255,255,255) !important;
     color:rgb(32,246,132);
 }

@@ -1,13 +1,13 @@
 <template>
 
-  <div>
+  <div class="main">
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
-     <div class ="head_1"> 恶意软件安全检测</div>
+    <div class ="head_1"> 恶意软件安全检测</div>
     <div class="resHeader">
       <img @click="goBack" src="../assets/imgs/fanhui.png" alt="" /><span
         @click="goBack"
         class="back"    
-        >返回</span
+        ></span
       ><span class="title">检测结果</span>
      
     </div>
@@ -181,6 +181,7 @@ export default {
 </script>
 
 <style scoped>
+
 .resHeader {
   position: relative;
   height: 50px;
