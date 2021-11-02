@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Petrificus-totalus/Malware-Detection/issues"
   },
-  "homepage": "https://github.com/Petrificus-totalus/Malware-Detection#readme"
+  "homepage": "https://github.com/Petrificus-totalus/Malware-Detection#readme",
+  "dependencies": {
+    "echarts": "^5.2.1"
+  }
 }

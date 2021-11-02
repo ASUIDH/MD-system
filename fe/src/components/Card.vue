@@ -48,7 +48,8 @@ export default {
   },
   methods: {
     handleClick(info) {
-      this.$router.push(`/result/${info.md5}/md5`);
+      // this.$router.push(`/result_${info.type}/${info.md5}/md5`);
+      this.$router.push(`/result_${info.type}/${info.md5}/md5`)
     },
   },
 };

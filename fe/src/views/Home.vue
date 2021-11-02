@@ -1,7 +1,9 @@
 <template>
+
   <div class="home">
     <el-container>
-      <el-header>
+      <div class ="head_1"> 恶意软件安全检测</div>
+      <el-header >
         <el-menu
           :default-active="activeIndex"
           class="el-menu-demo"
@@ -12,11 +14,13 @@
         >
           <el-menu-item index="/1">软件检测</el-menu-item>
           <el-menu-item index="/2">检测搜索</el-menu-item>
+          <el-menu-item index="/3">相似性度量</el-menu-item>
+
         </el-menu>
 
         <div v-if="!isLogin" class="sign">
           <el-button
-            style="marginright: 20px"
+            style="margin-right: 20px"
             round
             size="small"
             type="primary"
@@ -26,7 +30,7 @@
         </div>
 
         <div v-else>
-          <el-dropdown @command="handleCommand" style="marginright: 20px">
+          <el-dropdown @command="handleCommand" style="margin-right: 20px">
             <el-button type="success">
               {{ name }}<i class="el-icon-arrow-down el-icon--right"></i>
             </el-button>
@@ -342,6 +346,7 @@ export default {
 };
 </script>
 
+
 <style scoped>
 .el-footer,
 .el-header {
@@ -351,18 +356,20 @@ export default {
   color: rgb(48, 230, 57);
   text-align: center;
   line-height: 60px;
-  padding: 0;
+  padding:0px 0px 0px 85px;
   height: 60px;
-  background:  #1ca525;
+  box-shadow: 10px 10px 5px #888888;
+  background:  rgb(53,167,89);
 }
 
 .el-main {
-  height: 761px;
+  height: 900px;
   color: rgb(0, 0, 0);
   text-align: center;
   position: relative;
   padding: 0;
   background-color: rgb(236, 240, 244);
+  box-shadow: 10px 10px 5px #888888;
 }
 .el-icon-arrow-down {
   font-size: 12px;
@@ -398,11 +405,21 @@ export default {
   right: 20px;
 } */
 .el-menu-item{
-  background:  #1ca525;
+  height:60px;
+  font-size:16px;
+  background:  rgb(53,167,89);
   color: rgb(255,255,255);
 }
 .el-menu-item:hover{
     outline: 0 !important;
-    background: #0b8b1c !important;
+    background: rgb(255,255,255) !important;
+    color:rgb(32,246,132);
+}
+.head_1{
+  background:rgb(40,40,40);
+  color:rgb(255,255,255);
+  height:35px;
+  font-size:20px;
+  padding:0px 0px 0px 100px;
 }
 </style>
