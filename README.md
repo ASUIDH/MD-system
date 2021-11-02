@@ -28,5 +28,8 @@ python manage.py db migrate -m "init"
 
 python manage.py db upgrade
 ```
+## Contribuiters
+* @ASUIDH
+* @xuxixaohaoer
 ## video demonstration
 视频演示文件下载地址：https://b23.tv/cfJGSS
