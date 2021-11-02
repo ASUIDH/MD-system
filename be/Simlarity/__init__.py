@@ -92,7 +92,7 @@ def testWithMd5(md5):
     for id in id_name:
         if( id_type[id] == "pefile"):
             candidates.append(id)
-        if len(candidates) > 50 :
+        if len(candidates) > 20 :
             break
     topIds = test(query,candidates)
     topsMd5 = [id_name[id] for id in topIds]
