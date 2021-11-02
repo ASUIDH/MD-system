@@ -9,13 +9,14 @@
           class="el-menu-demo"
           mode="horizontal"
           @select="handleSelect"
-          active-text-color="rgb(87, 157, 248)"
+          active-text-color="rgb(53,167,89)"
           router
         >
-          <el-menu-item index="/1">软件检测</el-menu-item>
-          <el-menu-item index="/2">检测搜索</el-menu-item>
-          <el-menu-item index="/3">相似性度量</el-menu-item>
 
+          <el-menu-item index="/1"><img src="../assets/imgs/icon-test.png" alt="" style="width:25px"/>&nbsp软件检测</el-menu-item>
+          <el-menu-item index="/2"><img src="../assets/imgs/sousuo.png" alt="" style="width:20px"/>&nbsp检测搜索</el-menu-item>
+          <el-menu-item index="/3"><img src="../assets/imgs/wenbenxiangsixing-4.png" alt="" style="width:20px"/>&nbsp相似性度量</el-menu-item>
+          
         </el-menu>
 
         <div v-if="!isLogin" class="sign">
@@ -409,9 +410,11 @@ export default {
   font-size:16px;
   background:  rgb(53,167,89);
   color: rgb(255,255,255);
+  border-bottom-color:rgb(32,246,132);
 }
 .el-menu-item:hover{
     outline: 0 !important;
+    height: 65px;
     background: rgb(255,255,255) !important;
     color:rgb(32,246,132);
 }

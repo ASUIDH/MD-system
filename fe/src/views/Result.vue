@@ -61,7 +61,6 @@ import Coff from "./details/Coff";
 import Sections from "./details/Sections";
 import Optional from "./details/Optional";
 import Imports from "./details/Imports";
-
 export default {
   async created() {
     document.title = "结果";
@@ -114,18 +113,15 @@ export default {
   display: flex;
   justify-content: space-between;
 }
-
 .resHeader img {
   display: inline-block;
   width: 30px;
   height: 30px;
 }
-
 .resHeader img:hover,
 .resHeader .back:hover {
   cursor: pointer;
 }
-
 .resHeader .back {
   /* margin: 20px 0; */
   /* padding: 5px; */
@@ -142,7 +138,6 @@ export default {
   top: 50%;
   transform: translateY(-50%);
 }
-
 .title {
   position: absolute;
   font-size: 24px;
@@ -150,7 +145,6 @@ export default {
   transform: translateX(-50%);
   color:rgb(255,255,255);
 }
-
 .results {
   width: 86vw;
   margin: 0 auto;

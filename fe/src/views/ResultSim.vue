@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
      <div class ="head_1"> 恶意软件安全检测</div>
     <div class="resHeader">
-      <img @click="goBack" src="../assets/imgs/back.png" alt="" /><span
+      <img @click="goBack" src="../assets/imgs/fanhui.png" alt="" /><span
         @click="goBack"
         class="back"    
         >返回</span
@@ -212,7 +212,7 @@ export default {
   position: relative;
   color:rgb(255,255,255);
 }
-.resHeader .back::after {
+/* .resHeader .back::after {
   content: "";
   position: absolute;
   width: 3px;
@@ -221,7 +221,7 @@ export default {
   left: 45px;
   top: 50%;
   transform: translateY(-50%);
-}
+} */
 
 .title {
   position: absolute;
