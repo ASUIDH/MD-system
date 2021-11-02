@@ -6,7 +6,8 @@ class Config(object):
     SECRET_KEY = "asdfghjkl;"
 
     # 数据库配置
-    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:root1234@127.0.0.1:3306/maleware"
+    #SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:root1234@127.0.0.1:3306/maleware"
+    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:@127.0.0.1:3306/maleware"
     SQLALCHEMY_TRACK_MODIFICATION = True
 
     # redis
@@ -23,7 +24,7 @@ class Config(object):
 
 class devConfig(Config):
     """开发模式配置信息"""
-    DEBUG = True
+    DEBUG = False
     pass
 
 
