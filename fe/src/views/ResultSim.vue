@@ -1,13 +1,13 @@
 <template>
 
-  <div>
+  <div class="main">
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
-     <div class ="head_1"> 恶意软件安全检测</div>
+    <div class ="head_1"> Windows恶意软件相似性度量平台</div>
     <div class="resHeader">
-      <img @click="goBack" src="../assets/imgs/back.png" alt="" /><span
+      <img @click="goBack" src="../assets/imgs/fanhui.png" alt="" /><span
         @click="goBack"
         class="back"    
-        >返回</span
+        ></span
       ><span class="title">检测结果</span>
      
     </div>
@@ -181,6 +181,7 @@ export default {
 </script>
 
 <style scoped>
+
 .resHeader {
   position: relative;
   height: 50px;
@@ -212,7 +213,7 @@ export default {
   position: relative;
   color:rgb(255,255,255);
 }
-.resHeader .back::after {
+/* .resHeader .back::after {
   content: "";
   position: absolute;
   width: 3px;
@@ -221,7 +222,7 @@ export default {
   left: 45px;
   top: 50%;
   transform: translateY(-50%);
-}
+} */
 
 .title {
   position: absolute;
@@ -249,8 +250,9 @@ export default {
 .head_1{
   background:rgb(40,40,40);
   color:rgb(255,255,255);
-  height:35px;
-  font-size:20px;
+  height:45px;
+  font-size:36px;
+  text-align: center;
   padding:0px 0px 0px 100px;
 }
 </style>

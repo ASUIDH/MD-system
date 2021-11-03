@@ -2,20 +2,21 @@
 
   <div class="home">
     <el-container>
-      <div class ="head_1"> 恶意软件安全检测</div>
+      <div class ="head_1">Windows恶意软件相似性度量平台</div>
       <el-header >
         <el-menu
           :default-active="activeIndex"
           class="el-menu-demo"
           mode="horizontal"
           @select="handleSelect"
-          active-text-color="rgb(87, 157, 248)"
+          active-text-color="rgb(53,167,89)"
           router
         >
-          <el-menu-item index="/1">软件检测</el-menu-item>
-          <el-menu-item index="/2">检测搜索</el-menu-item>
-          <el-menu-item index="/3">相似性度量</el-menu-item>
 
+          <el-menu-item index="/1"><img src="../assets/imgs/icon-test.png" alt="" style="width:25px"/>&nbsp;软件检测</el-menu-item>
+          <el-menu-item index="/2"><img src="../assets/imgs/sousuo.png" alt="" style="width:20px"/>&nbsp;检测搜索</el-menu-item>
+          <el-menu-item index="/3"><img src="../assets/imgs/wenbenxiangsixing-4.png" alt="" style="width:20px"/>&nbsp;相似性度量</el-menu-item>
+          
         </el-menu>
 
         <div v-if="!isLogin" class="sign">
@@ -348,6 +349,7 @@ export default {
 
 
 <style scoped>
+
 .el-footer,
 .el-header {
   display: flex;
@@ -360,6 +362,7 @@ export default {
   height: 60px;
   box-shadow: 10px 10px 5px #888888;
   background:  rgb(53,167,89);
+
 }
 
 .el-main {
@@ -369,7 +372,11 @@ export default {
   position: relative;
   padding: 0;
   background-color: rgb(236, 240, 244);
+  background-image:url( "../assets/imgs/beijing1.png");
+  background-repeat:no-repeat;
+  background-position: 128% 0%;
   box-shadow: 10px 10px 5px #888888;
+
 }
 .el-icon-arrow-down {
   font-size: 12px;
@@ -405,21 +412,24 @@ export default {
   right: 20px;
 } */
 .el-menu-item{
-  height:60px;
+
   font-size:16px;
   background:  rgb(53,167,89);
   color: rgb(255,255,255);
+  border-bottom-color:rgb(32,246,132);
 }
 .el-menu-item:hover{
     outline: 0 !important;
+
     background: rgb(255,255,255) !important;
     color:rgb(32,246,132);
 }
 .head_1{
   background:rgb(40,40,40);
   color:rgb(255,255,255);
-  height:35px;
-  font-size:20px;
+  height:45px;
+  font-size:36px;
+  text-align:center;
   padding:0px 0px 0px 100px;
 }
 </style>
