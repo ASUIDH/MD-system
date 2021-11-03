@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <div class ="head_1"> 恶意软件安全检测</div>
+    <div class ="head_1">Windows恶意软件相似性度量平台</div>
     <div class="resHeader">
       <img @click="goBack" src="../assets/imgs/fanhui.png" alt="" /><span
         @click="goBack"
@@ -156,8 +156,9 @@ export default {
 .head_1{
   background:rgb(40,40,40);
   color:rgb(255,255,255);
-  height:35px;
-  font-size:20px;
+  height:45px;
+  font-size:36px;
+  text-align: center;
   padding:0px 0px 0px 100px;
 }
 </style>
